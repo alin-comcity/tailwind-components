@@ -1,0 +1,4 @@
+project folder: 'tailwind-components'
+এখানে tailwind css এর component থাকবে যা আমার develop করা।
+category wise থাকবে। এগুলো পরবর্তিতে একটা প্রজেক্ট এ যুক্ত করা হবে ইনশাআল্লাহ। 
+
