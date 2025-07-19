@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Comment Ticker with Photo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div
+      class="overflow-hidden whitespace-nowrap bg-indigo-600 text-white py-3"
+    >
+      <div class="flex items-center animate-marquee gap-10">
+        <!-- Comment 1 -->
+        <div class="flex items-center gap-3">
+          <img
+            src="https://randomuser.me/api/portraits/women/1.jpg"
+            class="w-8 h-8 rounded-full border-2 border-white"
+            alt="User"
+          />
+          <span class="text-sm">💬 সানজিদা: “অসাধারণ ডিজাইন!”</span>
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="flex items-center gap-3">
+          <img
+            src="https://randomuser.me/api/portraits/men/2.jpg"
+            class="w-8 h-8 rounded-full border-2 border-white"
+            alt="User"
+          />
+          <span class="text-sm">💬 রাহুল: “এই ব্লগ অনেক কাজে দিয়েছে।”</span>
+        </div>
+
+        <!-- Comment 3 -->
+        <div class="flex items-center gap-3">
+          <img
+            src="https://randomuser.me/api/portraits/women/3.jpg"
+            class="w-8 h-8 rounded-full border-2 border-white"
+            alt="User"
+          />
+          <span class="text-sm">💬 তানিয়া: “আমি এটা বন্ধুদেরও পাঠিয়েছি।”</span>
+        </div>
+
+        <!-- Comment 4 -->
+        <div class="flex items-center gap-3">
+          <img
+            src="https://randomuser.me/api/portraits/men/4.jpg"
+            class="w-8 h-8 rounded-full border-2 border-white"
+            alt="User"
+          />
+          <span class="text-sm">💬 আজিজ: “Thanks for the clean UI.”</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
