@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Only Lightbox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Lightbox background */
+      #lightbox-toggle:checked ~ #lightbox {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <h1 class="text-3xl font-bold text-center mb-8">
+      CSS Only Lightbox Gallery
+    </h1>
+
+    <!-- Hidden checkbox toggle -->
+    <input type="checkbox" id="lightbox-toggle" class="hidden" />
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+    >
+      <!-- Thumbnail labels trigger the lightbox toggle -->
+      <label
+        for="lightbox-toggle"
+        class="cursor-pointer rounded-lg overflow-hidden shadow-md block"
+      >
+        <img
+          src="https://picsum.photos/id/1011/400/300"
+          alt="Image 1"
+          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </label>
+    </div>
+
+    <!-- Lightbox modal -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
+    >
+      <label
+        for="lightbox-toggle"
+        class="absolute top-6 right-6 text-white text-4xl cursor-pointer select-none"
+        title="Close"
+        >&times;</label
+      >
+      <img
+        src="https://picsum.photos/id/1011/1200/900"
+        alt="Lightbox Image"
+        class="max-w-full max-h-[90vh] rounded shadow-lg"
+      />
+    </div>
+  </body>
+</html>

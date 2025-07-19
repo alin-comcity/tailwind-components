@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Only Multi-Image Lightbox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Hide radios */
+      input[type="radio"] {
+        display: none;
+      }
+
+      /* Lightbox default hidden */
+      .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      /* Show lightbox when radio checked */
+      #img1:checked ~ .lightbox-container #lightbox1,
+      #img2:checked ~ .lightbox-container #lightbox2,
+      #img3:checked ~ .lightbox-container #lightbox3 {
+        display: flex;
+      }
+
+      /* Close button */
+      .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        color: white;
+        font-size: 3rem;
+        cursor: pointer;
+        user-select: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+      .close-btn:hover {
+        color: #f87171; /* red-400 */
+      }
+
+      /* Image style */
+      .lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <h1 class="text-3xl font-bold text-center mb-8 text-gray-900">
+      CSS Only Multi-Image Lightbox
+    </h1>
+
+    <!-- Radios -->
+    <input type="radio" name="gallery" id="img1" />
+    <input type="radio" name="gallery" id="img2" />
+    <input type="radio" name="gallery" id="img3" />
+    <input type="radio" name="gallery" id="close" checked />
+
+    <!-- Gallery Thumbnails -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto"
+    >
+      <label
+        for="img1"
+        class="cursor-pointer rounded-lg overflow-hidden shadow-md block"
+      >
+        <img
+          src="https://picsum.photos/id/1011/400/300"
+          alt="Image 1"
+          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </label>
+
+      <label
+        for="img2"
+        class="cursor-pointer rounded-lg overflow-hidden shadow-md block"
+      >
+        <img
+          src="https://picsum.photos/id/1015/400/300"
+          alt="Image 2"
+          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </label>
+
+      <label
+        for="img3"
+        class="cursor-pointer rounded-lg overflow-hidden shadow-md block"
+      >
+        <img
+          src="https://picsum.photos/id/1024/400/300"
+          alt="Image 3"
+          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </label>
+    </div>
+
+    <!-- Lightbox Containers -->
+    <div class="lightbox-container">
+      <div id="lightbox1" class="lightbox">
+        <label for="close" class="close-btn" title="Close">&times;</label>
+        <img src="https://picsum.photos/id/1011/1200/900" alt="Image 1 Large" />
+      </div>
+      <div id="lightbox2" class="lightbox">
+        <label for="close" class="close-btn" title="Close">&times;</label>
+        <img src="https://picsum.photos/id/1015/1200/900" alt="Image 2 Large" />
+      </div>
+      <div id="lightbox3" class="lightbox">
+        <label for="close" class="close-btn" title="Close">&times;</label>
+        <img src="https://picsum.photos/id/1024/1200/900" alt="Image 3 Large" />
+      </div>
+    </div>
+  </body>
+</html>

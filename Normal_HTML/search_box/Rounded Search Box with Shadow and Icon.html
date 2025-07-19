@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Searchbox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <form class="max-w-md mx-auto my-6 relative">
+      <input
+        type="search"
+        placeholder="Search here..."
+        class="w-full rounded-full border border-gray-300 py-3 pl-10 pr-4 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+      />
+      <div
+        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-4.35-4.35m0 0a7 7 0 1 0-9.9-9.9 7 7 0 0 0 9.9 9.9z"
+          />
+        </svg>
+      </div>
+    </form>
+  </body>
+</html>
